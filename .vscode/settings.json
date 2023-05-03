@@ -9,7 +9,8 @@
     "node_modules": true,
     "coverage": true,
     "npm-packages-offline-cache": true,
-    "build": true
+    "build": true,
+    "packages/{backend,frontend}/build": true
   },
   "eslint.packageManager": "yarn",
   // "eslint.validate": ["javascript", "typescript"], // No need above or equal to Version 2.0.4

@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "0.0.0",
+  "private": true,
+  "engines": {
+    "node": "^18.12.1",
+    "yarn": "^1.22"
+  },
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "all": "yarn clean && yarn compile && yarn start",
+    "compile": "tsc -b",
+    "clean": "rimraf ./build && rimraf ./coverage && rimraf tsconfig.tsbuildinfo",
+    "codegen": "graphql-codegen --config be.codegen.ts",
+    "lint": "yarn eslint && yarn prettier",
+    "eslint": "eslint --fix './**/*.{ts,tsx,js,jsx}'",
+    "prettier": "prettier --write './**/*.{ts,tsx,js,jsx,json}'",
+    "start": "node --max-http-header-size=24820 ./build/src/index.js",
+    "test": "jest --coverage --passWithNoTests --maxWorkers=7",
+    "prepare": "yarn run compile",
+    "pretest": "yarn run compile"
+  },
+  "main": "build/src/index.js"
+}

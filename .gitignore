@@ -2,7 +2,8 @@
 node_modules
 build
 coverage
-node_modules
+packages/**/build
+packages/**/coverage
 tsconfig.tsbuildinfo
 npm-packages-offline-cache
 
