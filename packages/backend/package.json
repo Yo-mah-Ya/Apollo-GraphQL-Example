@@ -15,5 +15,10 @@
     "prepare": "yarn run compile",
     "pretest": "yarn run compile"
   },
-  "main": "build/src/index.js"
+  "main": "build/src/index.js",
+  "devDependencies": {
+    "@apollo/server": "4.7.1",
+    "fp-ts": "2.14.0",
+    "io-ts": "2.2.20"
+  }
 }
