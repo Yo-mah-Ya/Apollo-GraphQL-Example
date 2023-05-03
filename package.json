@@ -1,5 +1,5 @@
 {
-  "name": "backend",
+  "name": "apollo",
   "version": "0.0.0",
   "private": true,
   "engines": {
@@ -9,6 +9,12 @@
   "workspaces": {
     "packages": [
       "packages/*"
+    ],
+    "nohoist": [
+      "**/backend",
+      "**/backend/**",
+      "**/frontend",
+      "**/frontend/**"
     ]
   },
   "scripts": {
@@ -42,7 +48,7 @@
     "eslint-config-prettier": "8.8.0",
     "fp-ts": "2.14.0",
     "graphql": "16.6.0",
-    "graphql-constraint-directive": "5.0.0",
+    "graphql-constraint-directive": "v2",
     "graphql-depth-limit": "1.1.0",
     "graphql-tag": "2.12.6",
     "io-ts": "2.2.20",
