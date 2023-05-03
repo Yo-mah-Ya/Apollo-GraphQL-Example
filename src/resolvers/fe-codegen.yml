@@ -1,0 +1,29 @@
+schema: http://localhost:3000/graphql
+documents: ./src/**/*.${ts,tsx}
+generates:
+  ./src/types.ts:
+    plugins:
+      - add:
+          content: "/* eslint-disable */"
+      - typescript
+      - typescript-operations
+      - typescript-react-apollo
+    config:
+    	reactApolloVersions: 3
+      apolloClientVersions: 3
+      withHooks: true
+      withComponent: false
+      withHOC: false
+      hooksImportFrom: "@apollo/react-hooks"
+      enumAsTypes: true
+      maybeValue: "T | undefined"
+  ./src/helper.ts:
+    plugins:
+      - add:
+          content: "/* eslint-disable */"
+      - typescript-apollo-client-helpers
+  ./src/types-for-fragment.ts:
+    plugins:
+      - add:
+          content: "/* eslint-disable */"
+      - fragment-matcher
