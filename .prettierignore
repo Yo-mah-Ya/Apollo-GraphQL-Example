@@ -1,4 +1,5 @@
 build
 coverage
-src/resolvers/types.ts
-src/resolvers/schema.json
+packages/backend/src/resolvers/types.ts
+packages/backend/src/resolvers/schema.json
+packages/frontend/gql
