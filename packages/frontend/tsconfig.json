@@ -31,7 +31,8 @@
     "sourceMap": true,
     "strict": true,
     "strictPropertyInitialization": false,
-    "target": "ESNext"
+    "target": "ESNext",
+    "typeRoots": ["node_modules/@types", "src/@types"]
   },
   "exclude": ["dist", "coverage", "webpack/**/*.js", "webpack*.js"]
 }

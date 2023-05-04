@@ -1,4 +1,4 @@
-import { ApolloClient, InMemoryCache,  SuspenseCache } from "@apollo/client";
+import { ApolloClient, InMemoryCache, SuspenseCache } from "@apollo/client";
 export { ApolloProvider } from "@apollo/client";
 
 export const client = new ApolloClient({

@@ -263,11 +263,10 @@ const customDirectiveTransformer = (schema: GraphQLSchema): GraphQLSchema =>
         // },
     });
 
-export const customDirective = () =>
-    ({
-        customDirectiveTypeDefs: gql`
-            directive @cursor_forward on FIELD_DEFINITION | INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
-            directive @cursor_backward on FIELD_DEFINITION | INPUT_FIELD_DEFINITION | ARGUMENT_DEFINITION
-        `,
-        customDirectiveTransformer,
-    } as const);
+export const customDirective = {
+    customDirectiveTypeDefs: gql`
+        directive @cursor_forward on INPUT_OBJECT
+        directive @cursor_backward on INPUT_OBJECT
+    `,
+    customDirectiveTransformer,
+};

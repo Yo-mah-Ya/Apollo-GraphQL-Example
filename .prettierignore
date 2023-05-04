@@ -2,4 +2,4 @@ build
 coverage
 packages/backend/src/resolvers/types.ts
 packages/backend/src/resolvers/schema.json
-packages/frontend/gql
+packages/frontend/src/gql

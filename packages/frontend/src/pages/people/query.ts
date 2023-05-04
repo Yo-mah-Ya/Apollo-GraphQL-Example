@@ -1,9 +1,8 @@
-import { useSuspenseQuery_experimental, UseSuspenseQueryResult, gql } from "@apollo/client";
-import type { Query, QueryAllPeopleArgs } from "../../gql/graphql";
+import { gql } from "@apollo/client";
 
-const ALL_PEOPLE = gql`
-    query allPeople($first: Int) {
-        allPeople(first: $first) {
+export const ALL_PEOPLE = gql`
+    query allPeople($after: String, $first: Int, $before: String, $last: Int) {
+        allPeople(after: $after, first: $first, before: $before, last: $last) {
             pageInfo {
                 hasNextPage
                 hasPreviousPage
@@ -25,19 +24,3 @@ const ALL_PEOPLE = gql`
         }
     }
 `;
-
-interface QueryResultProcessed extends UseSuspenseQueryResult {
-    data: Query["allPeople"];
-}
-export const useAllPeople = (variables: QueryAllPeopleArgs): QueryResultProcessed => {
-    const response = useSuspenseQuery_experimental<{ allPeople: Query["allPeople"] }, QueryAllPeopleArgs>(
-        ALL_PEOPLE,
-        {
-            variables,
-        }
-    );
-    return {
-        ...response,
-        data: response.data?.allPeople,
-    };
-};
